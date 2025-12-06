@@ -18,7 +18,7 @@ function Github() {
         username="onlylej"
         blockSize={30}
         blockMargin={10}
-        color="#c084f5"
+        color="#84bbf5"
         fontSize={20}
       />
     </Row>
