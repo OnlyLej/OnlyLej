@@ -102,7 +102,7 @@ button:focus {
 
 .navbar-toggler span {
   display: block !important;
-  background-color: #be50f4 !important;
+  background-color: #84bbf5 !important;
   height: 4px !important;
   width: 27px !important;
   margin-top: 5px !important;
@@ -199,7 +199,7 @@ button:focus {
   height: 5px;
   width: 0;
   border-radius: 16px;
-  background: #c95bf5;
+  background: #84bbf5;
   bottom: 1px;
   left: 0;
   z-index: -1;
@@ -286,17 +286,17 @@ button:focus {
 }
 
 .main-name {
-  color: #cd5ff8;
+  color: #84bbf5;
 }
 
 .Typewriter__wrapper {
   font-size: 2.2em !important;
-  color: #be6adf !important;
+  color: #84bbf5 !important;
   font-weight: 600 !important;
 }
 .Typewriter__cursor {
   font-size: 2.4em !important;
-  color: #b562d6 !important;
+  color: #84bbf5 !important;
 }
 
 @media (max-width: 767px) {
@@ -400,7 +400,7 @@ button:focus {
 }
 
 .icon-colour {
-  color: #700c86 !important;
+  color: #0c4586 !important;
 }
 
 /* --------- */
@@ -444,7 +444,7 @@ button:focus {
 }
 
 .blockquote-footer {
-  color: #a588c0 !important;
+  color: #889dc0 !important;
 }
 /* --------- */
 /* Projects */
@@ -523,14 +523,14 @@ button:focus {
 
 .btn-primary {
   color: #fff !important;
-  background-color: #623686 !important;
-  border-color: #623686 !important;
+  background-color: #364a86 !important;
+  border-color: #364a86 !important;
 }
 
 .btn-primary:hover {
   color: #fff !important;
-  background-color: #6d20c5d7 !important;
-  border-color: #6d20c5d7 !important;
+  background-color: #203ec5 !important;
+  border-color: #203ec5 !important;
 }
 .btn:focus {
   outline: none !important;
@@ -663,14 +663,14 @@ button:focus {
 .resume .resume-item {
   padding: 0 0 10px 25px;
   margin-top: -2px;
-  border-left: 2px solid #8a49a8;
+  border-left: 2px solid #495ea8;
   position: relative;
 }
 
 .resume .resume-item .resume-title {
   line-height: 18px;
   font-size: 0.9em;
-  background: #5234795d;
+  background: #3449795d;
   padding: 8px 15px;
   display: inline-block;
   font-weight: 600;
@@ -700,7 +700,7 @@ button:focus {
   left: -9px;
   top: 0;
   background: #fff;
-  border: 2px solid #8a49a8;
+  border: 2px solid #495ea8;
 }
 
 .like-item {
