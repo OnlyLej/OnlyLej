@@ -1,17 +1,17 @@
 html {
   --section-background-color: linear-gradient(
     to bottom left,
-    rgba(10, 20, 40, 0.9),
+    rgba(10, 20, 40, 0.75),
     rgba(20, 60, 120, 0.95)
   );
 
   --image-gradient: linear-gradient(
     to bottom left,
-    rgba(10, 15, 30, 0.85),
+    rgba(10, 15, 30, 0.8),
     rgba(15, 35, 80, 0.9)
   );
 
-  --imp-text-color: #5da9ff;
+  --imp-text-color: #84bbf5;
 }
 
 .purple {
@@ -59,31 +59,33 @@ button:focus {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(93, 169, 255, 0.9);
+  background: rgba(132, 187, 245, 0.95);
   border-radius: 12px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(120, 185, 255, 0.95);
+  background: rgba(160, 205, 255, 0.95);
 }
 
 /* --------- */
 /* Navbar */
 /* --------- */
 .sticky {
-  background-color: rgba(15, 30, 60, 0.85) !important;
+  background-color: #121c33a9 !important;
+  transition: all 0.3s ease-out 0s !important;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25) !important;
   backdrop-filter: blur(15px) !important;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2) !important;
 }
 
 .navbar {
   position: fixed !important;
+  transition: all 0.3s ease-out 0s !important;
   padding: 0.3rem 2rem !important;
   font-size: 1.2rem !important;
 }
 
 .navbar-toggler span {
-  background-color: #5da9ff !important;
+  background-color: #84bbf5 !important;
 }
 
 .navbar-brand,
@@ -92,7 +94,7 @@ button:focus {
 }
 
 .navbar-nav .nav-item a::after {
-  background: #5da9ff;
+  background: #84bbf5;
 }
 
 /* --------- */
@@ -101,7 +103,7 @@ button:focus {
 .main-name,
 .Typewriter__wrapper,
 .Typewriter__cursor {
-  color: #5da9ff !important;
+  color: #84bbf5 !important;
 }
 
 .home-content {
@@ -112,7 +114,7 @@ button:focus {
 /* Social Icons */
 /* --------- */
 .home-social-icons {
-  background: white !important;
+  background: rgba(255, 255, 255, 0.97) !important;
 }
 
 .home-social-icons::before {
@@ -152,33 +154,38 @@ button:focus {
 }
 
 .project-card-view {
+  box-shadow: 0 4px 5px 3px rgba(80, 140, 220, 0.45) !important;
   background-color: transparent !important;
-  box-shadow: 0 4px 5px 3px rgba(70, 130, 220, 0.45) !important;
+  color: white !important;
   transition: all 0.5s ease !important;
 }
 
 .project-card-view:hover {
   transform: scale(1.02) !important;
-  box-shadow: 0 4px 4px 5px rgba(90, 150, 255, 0.55) !important;
+  box-shadow: 0 4px 4px 5px rgba(100, 170, 255, 0.55) !important;
 }
 
 /* --------- */
 /* Blog */
 /* --------- */
 .blog-card-view {
-  box-shadow: 0 3px 3px 2px rgba(70, 130, 220, 0.45) !important;
+  background-color: transparent !important;
+  box-shadow: 0 3px 3px 2px rgba(80, 140, 220, 0.45) !important;
+  color: white !important;
 }
 
 .blog-card-view:hover {
-  box-shadow: 0 3px 3px 5px rgba(90, 150, 255, 0.6) !important;
+  transform: scale(1.02) !important;
+  box-shadow: 0 3px 3px 5px rgba(100, 170, 255, 0.6) !important;
 }
 
 /* --------- */
 /* Buttons */
 /* --------- */
 .btn-primary {
-  background-color: #1f6fd1 !important;
-  border-color: #1f6fd1 !important;
+  color: #fff !important;
+  background-color: #2f5fb8 !important;
+  border-color: #2f5fb8 !important;
 }
 
 .btn-primary:hover {
@@ -188,26 +195,26 @@ button:focus {
 
 .like-btn,
 .fork-btn-inner {
-  background-color: rgba(60, 120, 220, 0.4) !important;
-  border-color: rgba(60, 120, 220, 0.4) !important;
+  background-color: rgba(80, 140, 220, 0.4) !important;
+  border-color: rgba(80, 140, 220, 0.4) !important;
 }
 
 .like-btn:hover,
 .fork-btn-inner:hover {
-  background-color: rgba(80, 150, 255, 0.6) !important;
-  border-color: rgba(80, 150, 255, 0.6) !important;
+  background-color: rgba(100, 170, 255, 0.6) !important;
+  border-color: rgba(100, 170, 255, 0.6) !important;
 }
 
 /* --------- */
 /* Tech Stack */
 /* --------- */
 .tech-icons {
-  outline: 1.7px solid rgba(90, 150, 255, 0.6) !important;
-  box-shadow: 4px 5px 4px rgba(30, 80, 180, 0.15) !important;
+  outline: 1.7px solid rgba(120, 180, 255, 0.6) !important;
+  box-shadow: 4px 5px 4px 3px rgba(40, 90, 180, 0.15) !important;
 }
 
 .tech-icons:hover {
-  outline: 2.2px solid rgba(120, 180, 255, 0.9) !important;
+  outline: 2.2px solid rgba(140, 200, 255, 0.9) !important;
 }
 
 /* --------- */
@@ -218,9 +225,9 @@ button:focus {
 }
 
 .resume .resume-item {
-  border-left: 2px solid #5da9ff;
+  border-left: 2px solid #84bbf5;
 }
 
 .resume .resume-item::before {
-  border: 2px solid #5da9ff;
+  border: 2px solid #84bbf5;
 }
