@@ -1,4 +1,4 @@
-import Turnstile from "@marsidev/react-turnstile";
+import { Turnstile } from "@marsidev/react-turnstile";
 import { useState } from "react";
 
 export default function SecurityCheck({ onVerified }) {
