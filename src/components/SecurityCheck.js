@@ -12,18 +12,6 @@ export default function SecurityCheck({ onVerified }) {
   if (verified) return null;
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-      }}
-    >
-      <Turnstile
-        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
-        onSuccess={handleSuccess}
-      />
-    </div>
+    <Turnstile siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY} className='fixed bottom-4 right-4' options={{ theme: 'auto', size: 'normal', language: 'auto', }} scriptOptions={{ appendTo: 'body' }} />
   );
 }
