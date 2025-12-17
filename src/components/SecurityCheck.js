@@ -8,11 +8,8 @@ export default function SecurityCheck({ onVerified }) {
   return (
     <div className="turnstile-overlay">
       <div className="turnstile-card">
-        <Turnstile
-          siteKey="0x4AAAAAACGjTZRbda3DxCbm"
-          onSuccess={onVerified}
-          options={{ appearance: "interaction-only" }}
-        />
+        <Turnstile siteKey="0x4AAAAAACGjTZRbda3DxCbm" options={{ appearance: 'interaction-only' theme: 'auto', size: 'normal', language: 'auto', }} scriptOptions={{ appendTo: 'body' }} onSuccess={handleSuccess} />
+
       </div>
     </div>
   );
