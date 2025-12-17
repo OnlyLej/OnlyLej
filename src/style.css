@@ -759,3 +759,27 @@ button:focus {
 .fork-btn-inner::after {
   display: none !important;
 }
+
+.turnstile-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.turnstile-card {
+  background: rgba(20, 20, 20, 0.85);
+  padding: 24px 28px;
+  border-radius: 12px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.4),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
