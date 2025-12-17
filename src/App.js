@@ -15,16 +15,36 @@ import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const [load, updateLoad] = useState(true);
-  const [verified, setVerified] = useState(false);
+  const [verified, setVerified] = useState(
+  localStorage.getItem("human") === "1"
+  );
+  const [needsCheck, setNeedsCheck] = useState(false);
+
+  const handleVerified = () => {
+  localStorage.setItem("human", "1");
+  setVerified(true);
+  setNeedsCheck(false);
+  };
+  
+  function calculateRisk() {
+   let score = 0;
+ 
+   if (!localStorage.getItem("human")) score += 2;
+   if (navigator.webdriver) score += 5;
+   if (window.innerWidth === 0) score += 3;
+   if (performance.now() < 2000) score += 1;
+ 
+   return score;
+  }
 
   useEffect(() => {
-    const timer = setTimeout(() => updateLoad(false), 1200);
-    return () => clearTimeout(timer);
+   const risk = calculateRisk();
+
+   if (risk >= 4) {
+     setNeedsCheck(true);
+   }
   }, []);
 
-  if (!verified) {
-    return <SecurityCheck onVerified={() => setVerified(true)} />;
-  }
 
   return (
     <Router>
@@ -42,6 +62,9 @@ function App() {
         <Footer />
       </div>
     </Router>
+    {needsCheck && (
+    <SecurityCheck onVerified={handleVerified} />
+    )}
   );
 }
 
