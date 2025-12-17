@@ -14,9 +14,9 @@ export default function SecurityCheck({ onVerified }) {
   return (
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
       <Turnstile
-        siteKey={process.env.REACT_APP_TURNSTILE_SITE_KEY} // <-- use env variable
-        onVerify={handleVerify}
-      />
+       siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+       onVerify={handleVerify}
+     />
     </div>
   );
 }
