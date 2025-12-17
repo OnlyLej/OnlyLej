@@ -14,7 +14,7 @@ export default function SecurityCheck({ onVerified }) {
         justifyContent: "center",
       }}
     >
-      <Turnstile siteKey="0x4AAAAAACGjTZRbda3DxCbm" options={{ theme: 'auto', size: 'normal', language: 'auto', }} scriptOptions={{ appendTo: 'body' }} onSuccess={handleSuccess} />
+      <Turnstile siteKey="0x4AAAAAACGjTZRbda3DxCbm" options={{ appearance: 'interaction-only' theme: 'auto', size: 'normal', language: 'auto', }} scriptOptions={{ appendTo: 'body' }} onSuccess={handleSuccess} />
     </div>
   );
 }
