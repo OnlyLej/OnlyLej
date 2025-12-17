@@ -16,7 +16,7 @@ export default function SecurityCheck({ onVerified }) {
       <Turnstile
        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
        onVerify={handleVerify}
-     />
+      />
     </div>
   );
 }
