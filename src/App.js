@@ -15,56 +15,69 @@ import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const [load, updateLoad] = useState(true);
+
   const [verified, setVerified] = useState(
-  localStorage.getItem("human") === "1"
+    localStorage.getItem("human") === "1"
   );
+
   const [needsCheck, setNeedsCheck] = useState(false);
 
-  const handleVerified = () => {
-  localStorage.setItem("human", "1");
-  setVerified(true);
-  setNeedsCheck(false);
-  };
-  
-  function calculateRisk() {
-   let score = 0;
- 
-   if (!localStorage.getItem("human")) score += 2;
-   if (navigator.webdriver) score += 5;
-   if (window.innerWidth === 0) score += 3;
-   if (performance.now() < 2000) score += 1;
- 
-   return score;
-  }
-
+  // Preloader release
   useEffect(() => {
-   const risk = calculateRisk();
-
-   if (risk >= 4) {
-     setNeedsCheck(true);
-   }
+    const timer = setTimeout(() => updateLoad(false), 1200);
+    return () => clearTimeout(timer);
   }, []);
 
+  // Simple risk scoring
+  function calculateRisk() {
+    let score = 0;
+
+    if (!localStorage.getItem("human")) score += 2;
+    if (navigator.webdriver) score += 5;
+    if (window.innerWidth === 0) score += 3;
+    if (performance.now() < 2000) score += 1;
+
+    return score;
+  }
+
+  // Decide if we need a challenge
+  useEffect(() => {
+    const risk = calculateRisk();
+    if (risk >= 4) setNeedsCheck(true);
+  }, []);
+
+  // Called after Turnstile success
+  const handleVerified = () => {
+    localStorage.setItem("human", "1");
+    setVerified(true);
+    setNeedsCheck(false);
+  };
 
   return (
-    <Router>
-      <Preloader load={load} />
-      <div className="App" id={load ? "no-scroll" : "scroll"}>
-        <Navbar />
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/project" element={<Projects />} />
-          <Route path="/about" element={<About />} />
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
-        <Analytics />
-        <Footer />
-      </div>
-    </Router>
-    {needsCheck && (
-    <SecurityCheck onVerified={handleVerified} />
-    )}
+    <>
+      <Router>
+        <Preloader load={load} />
+
+        <div className="App" id={load ? "no-scroll" : "scroll"}>
+          <Navbar />
+          <ScrollToTop />
+
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/project" element={<Projects />} />
+            <Route path="/about" element={<About />} />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+
+          <Analytics />
+          <Footer />
+        </div>
+      </Router>
+
+      {needsCheck && !verified && (
+        <SecurityCheck onVerified={handleVerified} />
+      )}
+    </>
   );
 }
 
