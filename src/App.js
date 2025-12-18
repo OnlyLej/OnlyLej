@@ -65,8 +65,7 @@ function App() {
      
     }
 
-    console.log("[Risk] total =", risk);
-
+ 
     if (risk >= 2) {
     
       setShowCheck(true);
@@ -82,11 +81,6 @@ function App() {
     setShowCheck(false);
   };
 
-  console.log("[Render flags]", {
-    load,
-    verified,
-    showCheck,
-  });
 
   return (
     <>
