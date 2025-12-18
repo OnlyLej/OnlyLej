@@ -7,7 +7,7 @@ export default function SecurityCheck({ onVerified }) {
         <Turnstile
           siteKey="0x4AAAAAACGjTZRbda3DxCbm"
           options={{
-            appearance: "interaction-only",
+            appearance: "always",
             theme: "auto",
             size: "normal",
             language: "auto",
