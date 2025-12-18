@@ -67,7 +67,7 @@ function App() {
 
     console.log("[Risk] total =", risk);
 
-    if (risk >= 4) {
+    if (risk >= 2) {
       console.log("[Risk] HIGH → showing Turnstile");
       setShowCheck(true);
     } else {
