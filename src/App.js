@@ -12,6 +12,7 @@ import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 function App() {
   console.log("[App] render");
@@ -104,8 +105,9 @@ function App() {
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
 
-          <Analytics />
           <Footer />
+          <Analytics />
+          <SpeedInsights />
         </div>
       </Router>
 
