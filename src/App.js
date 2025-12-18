@@ -66,7 +66,7 @@ function App() {
     }
 
  
-    if (risk >= 2) {
+    if (risk >= 1) {
     
       setShowCheck(true);
     } else {
