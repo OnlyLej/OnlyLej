@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SecurityCheck from "./components/SecurityCheck";
-import Preloader from "../src/components/Pre";
+import Preloader from "./components/Pre";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
@@ -14,45 +14,79 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Analytics } from "@vercel/analytics/react";
 
 function App() {
-  const [load, updateLoad] = useState(true);
+  console.log("[App] render");
 
-  const [verified, setVerified] = useState(
-    localStorage.getItem("human") === "1"
-  );
+  const [load, setLoad] = useState(true);
+  const [verified, setVerified] = useState(false);
+  const [showCheck, setShowCheck] = useState(false);
 
-  const [needsCheck, setNeedsCheck] = useState(false);
-
-  // Preloader release
+  // Preloader
   useEffect(() => {
-    const timer = setTimeout(() => updateLoad(false), 1200);
-    return () => clearTimeout(timer);
+    console.log("[Preloader] start");
+    const t = setTimeout(() => {
+      console.log("[Preloader] done");
+      setLoad(false);
+    }, 1200);
+    return () => clearTimeout(t);
   }, []);
 
-  // Simple risk scoring
-  function calculateRisk() {
-    let score = 0;
-
-    if (!localStorage.getItem("human")) score += 2;
-    if (navigator.webdriver) score += 5;
-    if (window.innerWidth === 0) score += 3;
-    if (performance.now() < 2000) score += 1;
-
-    return score;
-  }
-
-  // Decide if we need a challenge
+  // Restore verification
   useEffect(() => {
-    const risk = calculateRisk();
-    if (risk >= 4) setNeedsCheck(true);
-    console.log(risk);
+    const stored = localStorage.getItem("human");
+    console.log("[Verify] localStorage human =", stored);
+
+    if (stored === "1") {
+      console.log("[Verify] already verified");
+      setVerified(true);
+    }
   }, []);
 
-  // Called after Turnstile success
+  // Risk calculation
+  useEffect(() => {
+    let risk = 0;
+
+    if (!localStorage.getItem("human")) {
+      risk += 2;
+      console.log("[Risk] no human flag (+2)");
+    }
+
+    if (navigator.webdriver) {
+      risk += 5;
+      console.log("[Risk] webdriver detected (+5)");
+    }
+
+    if (window.innerWidth === 0) {
+      risk += 3;
+      console.log("[Risk] zero width (+3)");
+    }
+
+    if (performance.now() < 2000) {
+      risk += 1;
+      console.log("[Risk] fast load (+1)");
+    }
+
+    console.log("[Risk] total =", risk);
+
+    if (risk >= 4) {
+      console.log("[Risk] HIGH → showing Turnstile");
+      setShowCheck(true);
+    } else {
+      console.log("[Risk] LOW → no check");
+    }
+  }, []);
+
   const handleVerified = () => {
+    console.log("[Turnstile] verified");
     localStorage.setItem("human", "1");
     setVerified(true);
-    setNeedsCheck(false);
+    setShowCheck(false);
   };
+
+  console.log("[Render flags]", {
+    load,
+    verified,
+    showCheck,
+  });
 
   return (
     <>
@@ -75,8 +109,11 @@ function App() {
         </div>
       </Router>
 
-      {needsCheck && !verified && (
-        <SecurityCheck onVerified={handleVerified} />
+      {showCheck && !verified && (
+        <>
+          {console.log("[Render] SecurityCheck mounted")}
+          <SecurityCheck onVerified={handleVerified} />
+        </>
       )}
     </>
   );
