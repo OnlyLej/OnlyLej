@@ -44,6 +44,7 @@ function App() {
   useEffect(() => {
     const risk = calculateRisk();
     if (risk >= 4) setNeedsCheck(true);
+    console.log(risk);
   }, []);
 
   // Called after Turnstile success
