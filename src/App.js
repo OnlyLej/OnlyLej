@@ -15,7 +15,6 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from '@vercel/speed-insights/react';
 
 function App() {
-  console.log("[App] render");
 
   const [load, setLoad] = useState(true);
   const [verified, setVerified] = useState(false);
@@ -23,9 +22,7 @@ function App() {
 
   // Preloader
   useEffect(() => {
-    console.log("[Preloader] start");
     const t = setTimeout(() => {
-      console.log("[Preloader] done");
       setLoad(false);
     }, 1200);
     return () => clearTimeout(t);
@@ -34,10 +31,8 @@ function App() {
   // Restore verification
   useEffect(() => {
     const stored = localStorage.getItem("human");
-    console.log("[Verify] localStorage human =", stored);
 
     if (stored === "1") {
-      console.log("[Verify] already verified");
       setVerified(true);
     }
   }, []);
@@ -48,36 +43,29 @@ function App() {
 
     if (!localStorage.getItem("human")) {
       risk += 2;
-      console.log("[Risk] no human flag (+2)");
     }
 
     if (navigator.webdriver) {
       risk += 5;
-      console.log("[Risk] webdriver detected (+5)");
     }
 
     if (window.innerWidth === 0) {
       risk += 3;
-      console.log("[Risk] zero width (+3)");
     }
 
     if (performance.now() < 2000) {
       risk += 1;
-      console.log("[Risk] fast load (+1)");
     }
 
-    console.log("[Risk] total =", risk);
 
     if (risk >= 0) {
-      console.log("[Risk] HIGH → showing Turnstile");
       setShowCheck(true);
     } else {
-      console.log("[Risk] LOW → no check");
+      
     }
   }, []);
 
   const handleVerified = () => {
-    console.log("[Turnstile] verified");
     localStorage.setItem("human", "1");
     setVerified(true);
     setShowCheck(false);
@@ -113,7 +101,6 @@ function App() {
 
       {showCheck && !verified && (
         <>
-          {console.log("[Render] SecurityCheck mounted")}
           <SecurityCheck onVerified={handleVerified} />
         </>
       )}
