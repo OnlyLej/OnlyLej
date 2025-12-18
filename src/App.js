@@ -32,7 +32,7 @@ function App() {
   useEffect(() => {
     const stored = localStorage.getItem("human");
 
-    if (stored === "1") {
+    if (stored === "2") {
       setVerified(true);
     }
   }, []);
