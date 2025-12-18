@@ -1,21 +1,20 @@
-export default function SecurityCheck({ onVerified }) {
-  console.log("SecurityCheck mounted");
+import { Turnstile } from "@marsidev/react-turnstile";
 
+export default function SecurityCheck({ onVerified }) {
   return (
-    <div
-      style={{
-        position: "fixed",
-        inset: 0,
-        zIndex: 99999,
-        background: "rgba(255,0,0,0.6)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        color: "white",
-        fontSize: "24px",
-      }}
-    >
-      OVERLAY IS RENDERING
+    <div className="turnstile-overlay">
+      <div className="turnstile-card">
+        <Turnstile
+          siteKey="0x4AAAAAACGjTZRbda3DxCbm"
+          options={{
+            appearance: "interaction-only",
+            theme: "auto",
+            size: "normal",
+            language: "auto",
+          }}
+          onSuccess={onVerified}
+        />
+      </div>
     </div>
   );
 }
