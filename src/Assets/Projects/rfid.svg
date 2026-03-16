@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#0d1f2d"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#059669"/>
+      <stop offset="100%" style="stop-color:#10b981"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b"/>
+      <stop offset="100%" style="stop-color:#0f172a"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="400" fill="url(#bg)"/>
+
+  <circle cx="300" cy="200" r="180" fill="none" stroke="#10b98108" stroke-width="60"/>
+  <circle cx="300" cy="200" r="120" fill="none" stroke="#10b98110" stroke-width="40"/>
+  <circle cx="300" cy="200" r="60"  fill="none" stroke="#10b98118" stroke-width="20"/>
+
+  <rect x="30" y="30" width="260" height="150" rx="16" fill="url(#card)" filter="url(#shadow)" stroke="#10b98130" stroke-width="1"/>
+  <text x="50" y="60" fill="#10b981" font-family="Arial" font-size="11" font-weight="700" letter-spacing="2">RFID ATTENDANCE</text>
+  <line x1="50" y1="70" x2="270" y2="70" stroke="#10b98130" stroke-width="1"/>
+  <text x="50" y="95" fill="#94a3b8" font-family="Arial" font-size="11">Today</text>
+  <text x="50" y="115" fill="white" font-family="Arial" font-size="22" font-weight="bold">42 Present</text>
+  <text x="50" y="138" fill="#64748b" font-family="Arial" font-size="11">out of 50 students</text>
+  <rect x="50" y="152" width="220" height="6" rx="3" fill="#1e293b"/>
+  <rect x="50" y="152" width="185" height="6" rx="3" fill="url(#green)" opacity="0.9"/>
+
+  <rect x="310" y="30" width="130" height="68" rx="14" fill="url(#card)" filter="url(#shadow)" stroke="#10b98130" stroke-width="1"/>
+  <text x="328" y="56" fill="#94a3b8" font-family="Arial" font-size="11">On Time</text>
+  <text x="328" y="80" fill="#10b981" font-family="Arial" font-size="20" font-weight="bold">38</text>
+
+  <rect x="458" y="30" width="112" height="68" rx="14" fill="url(#card)" filter="url(#shadow)" stroke="#f59e0b30" stroke-width="1"/>
+  <text x="474" y="56" fill="#94a3b8" font-family="Arial" font-size="11">Late</text>
+  <text x="474" y="80" fill="#f59e0b" font-family="Arial" font-size="20" font-weight="bold">4</text>
+
+  <rect x="310" y="112" width="260" height="68" rx="14" fill="url(#card)" filter="url(#shadow)" stroke="#6366f130" stroke-width="1"/>
+  <text x="328" y="138" fill="#94a3b8" font-family="Arial" font-size="11">Absent</text>
+  <text x="328" y="162" fill="#f87171" font-family="Arial" font-size="20" font-weight="bold">8 students</text>
+
+  <rect x="30" y="200" width="540" height="170" rx="16" fill="url(#card)" filter="url(#shadow)" stroke="#ffffff08" stroke-width="1"/>
+  <text x="50" y="228" fill="white" font-family="Arial" font-size="13" font-weight="bold">Recent Scans</text>
+  <circle cx="570" cy="220" r="6" fill="#10b981" filter="url(#glow)"/>
+  <text x="540" y="225" fill="#10b981" font-family="Arial" font-size="9">LIVE</text>
+
+  <rect x="50" y="240" width="500" height="1" fill="#ffffff08"/>
+
+  <circle cx="66" cy="263" r="10" fill="#10b98120" stroke="#10b98150" stroke-width="1"/>
+  <text x="66" y="267" fill="#10b981" font-family="Arial" font-size="9" text-anchor="middle">IN</text>
+  <text x="88" y="261" fill="white" font-family="Arial" font-size="11" font-weight="600">Juan dela Cruz</text>
+  <text x="88" y="275" fill="#64748b" font-family="Arial" font-size="10">BSCS 3-A  •  08:02 AM</text>
+  <text x="510" y="268" fill="#10b981" font-family="Arial" font-size="10" font-weight="700">Present</text>
+
+  <rect x="50" y="288" width="500" height="1" fill="#ffffff08"/>
+
+  <circle cx="66" cy="311" r="10" fill="#f59e0b20" stroke="#f59e0b50" stroke-width="1"/>
+  <text x="66" y="315" fill="#f59e0b" font-family="Arial" font-size="8" text-anchor="middle">IN</text>
+  <text x="88" y="309" fill="white" font-family="Arial" font-size="11" font-weight="600">Maria Santos</text>
+  <text x="88" y="323" fill="#64748b" font-family="Arial" font-size="10">BSCS 3-A  •  08:17 AM</text>
+  <text x="510" y="316" fill="#f59e0b" font-family="Arial" font-size="10" font-weight="700">Late</text>
+
+  <rect x="50" y="336" width="500" height="1" fill="#ffffff08"/>
+
+  <circle cx="66" cy="359" r="10" fill="#10b98120" stroke="#10b98150" stroke-width="1"/>
+  <text x="66" y="363" fill="#10b981" font-family="Arial" font-size="9" text-anchor="middle">IN</text>
+  <text x="88" y="357" fill="white" font-family="Arial" font-size="11" font-weight="600">Carlos Reyes</text>
+  <text x="88" y="371" fill="#64748b" font-family="Arial" font-size="10">BSCS 3-A  •  07:58 AM</text>
+  <text x="510" y="364" fill="#10b981" font-family="Arial" font-size="10" font-weight="700">Present</text>
+</svg>

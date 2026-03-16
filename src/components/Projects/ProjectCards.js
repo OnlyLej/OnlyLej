@@ -70,19 +70,21 @@ function ProjectCards(props) {
         <p className="pc-desc">{props.description}</p>
 
         <div className="pc-links">
-  <a href={props.ghLink} target="_blank" rel="noreferrer" className="pc-btn pc-btn-ghost">
-    <BsGithub className="pc-btn-icon" />
-    <span>{props.isBlog ? "Blog" : "Code"}</span>
-  </a>
+          {props.ghLink && (
+            <a href={props.ghLink} target="_blank" rel="noreferrer" className="pc-btn pc-btn-ghost">
+              <BsGithub className="pc-btn-icon" />
+              <span>{props.isBlog ? "Blog" : "Code"}</span>
+            </a>
+          )}
 
-  {!props.isBlog && props.demoLink && (
-    <a href={props.demoLink} target="_blank" rel="noreferrer" className="pc-btn pc-btn-primary">
-      <CgWebsite className="pc-btn-icon" />
-      <span>Live Demo</span>
-      <span className="pc-btn-arrow">↗</span>
-    </a>
-  )}
-</div>
+          {!props.isBlog && props.demoLink && (
+            <a href={props.demoLink} target="_blank" rel="noreferrer" className="pc-btn pc-btn-primary">
+              <CgWebsite className="pc-btn-icon" />
+              <span>Live Demo</span>
+              <span className="pc-btn-arrow">↗</span>
+            </a>
+          )}
+        </div>
       </div>
 
       <div className="pc-corner" />

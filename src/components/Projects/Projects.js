@@ -2,8 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import ctb from "../../Assets/Projects/ctb.png";
+import ctb from "../../Assets/Projects/ctb.svg";
 import expenseTracker from "../../Assets/Projects/expensetracker.svg";
+import rfid from "../../Assets/Projects/rfid.svg";
 
 function Projects() {
   const sectionRef = useRef(null);
@@ -38,6 +39,15 @@ function Projects() {
         "A full-featured personal finance app built with React Native & Expo. Track daily spending, set budgets per category, visualize trends with charts, and back up your data — all stored locally on-device.",
       ghLink: "https://github.com/OnlyLej/Expenses-Tracker",
       demoLink: null,
+    },
+    {
+      imgPath: rfid,
+      isBlog: false,
+      title: "RFID Attendance Portal",
+      description:
+        "A research-backed web portal for a hardware RFID attendance system. Tracks student attendance in real time, logs scan history, and displays present, late, and absent records per session.",
+      ghLink: null,
+      demoLink: "https://ridap.vercel.app/",
     },
   ];
 
