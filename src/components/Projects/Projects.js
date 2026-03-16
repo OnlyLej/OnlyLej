@@ -36,7 +36,7 @@ function Projects() {
       title: "Expense Tracker",
       description:
         "A full-featured personal finance app built with React Native & Expo. Track daily spending, set budgets per category, visualize trends with charts, and back up your data — all stored locally on-device.",
-      ghLink: "https://github.com/OnlyLej/ExpenseTracker",
+      ghLink: "https://github.com/OnlyLej/Expenses-Tracker",
       demoLink: null,
     },
   ];
