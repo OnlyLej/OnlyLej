@@ -65,12 +65,23 @@ function App() {
     }
   }, []);
 
-  const handleVerified = () => {
-    localStorage.setItem("human", "1");
-    setVerified(true);
-    setShowCheck(false);
+  const handleVerified = async (token) => {
+    try {
+      const res = await fetch("https://turnstile.lej.qzz.io/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        localStorage.setItem("human", "2");
+        setVerified(true);
+        setShowCheck(false);
+      }
+    } catch (e) {
+      console.error("Verification failed", e);
+    }
   };
-
   console.log("[Render flags]", {
     load,
     verified,
