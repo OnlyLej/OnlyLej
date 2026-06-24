@@ -67,7 +67,7 @@ function App() {
 
   const handleVerified = async (token) => {
     try {
-      const res = await fetch("https://turnstile.lej.qzz.io/", {
+      const res = await fetch("https://turnstile-portfolio.lejematienzo.workers.dev/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ token }),
