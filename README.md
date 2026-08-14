@@ -7,7 +7,7 @@
 
 <p align="left"> <a href="https://twitter.com/magerusesthis" target="blank"><img src="https://img.shields.io/twitter/follow/magerusesthis?logo=twitter&style=for-the-badge" alt="magerusesthis" /></a> </p>
 
-- 🔭 I’m currently working on [RFID Attendance Portal](ridap.qzz.io)
+- 🔭 I’m currently working on [RFID Attendance Portal](https://ridap.qzz.io/)
 
 - 🌱 I’m currently learning **Backend, Frontend, Databases, Linux, Servers**
 
@@ -15,13 +15,13 @@
 
 - 🤝 I’m looking for help with **with all my might**
 
-- 👨‍💻 All of my projects are available at [lej.qzz.io](lej.qzz.io)
+- 👨‍💻 All of my projects are available at [lej.qzz.io](https://lej.qzz.io/)
 
 - 💬 Ask me about **JS and React**
 
 - 📫 How to reach me **lejematienzo@gmail.com**
 
-- 📄 Know about my experiences [lej.qzz.io](lej.qzz.io)
+- 📄 Know about my experiences [lej.qzz.io](https://lej.qzz.io/)
 
 - ⚡ Fun fact **I love Minecraft.**
 
