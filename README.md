@@ -1,4 +1,4 @@
-<h1 align="center">Hi 👋, I'm Lejel Matienzo</h1>
+<h1 align="center">Hi 👋, I'm Lejel</h1>
 <h3 align="center">A passionate backend developer from the Philippines</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=onlylej&label=Profile%20views&color=0000ff&style=flat" alt="onlylej" /> </p>
