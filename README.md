@@ -22,7 +22,7 @@
 
 - ⚡ Fun fact **I love Minecraft**
 
-- 👨‍💻 All of my projects are available at **[https://lej.qzz.io](https://lej.qzz.io)**
+- 👨‍💻 All of my projects are available at **[https://lejel.xyz](https://lejel.xyz)**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
